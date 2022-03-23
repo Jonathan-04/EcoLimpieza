@@ -1,0 +1,209 @@
+/* Contenedor del Formulario */
+.container-formulario {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Formulario */
+.formulario-registro {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+}
+
+/* Sección Secundaria */
+.opciones-registro {
+  width: 40%;
+  height: 100%;
+  background-color: #180d2a;
+  color: white;
+  text-align: center;
+}
+
+.opciones-registro h1 {
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+/* --------------- FORMULARIO ---------------- */
+/* Titulo */
+.formulario-registro h1 {
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.titulo-form {
+  width: 100%;
+  height: 40px;
+  margin-top: 50px;
+  background-color: #22a7f2;
+  display: flex;
+  align-items: center;
+}
+
+.titulo-form p {
+  font-size: 18px;
+  color: white;
+  margin-left: 20px;
+}
+
+/* Items del Formulario */
+.items-form ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items-form ul li {
+  display: inline-block;
+}
+
+.items-form,
+.items-form-2 {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.items {
+  width: 40%;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.items p {
+  margin-bottom: 10px;
+  color: rgb(46, 46, 46);
+}
+
+.items input[type="text"],
+.items input[type="password"],
+.items input[type="email"],
+.items select,
+.items input[type="number"] {
+  width: 70%;
+  padding: 5px;
+  border-style: none;
+  border-bottom: 1px solid silver;
+  outline: 0px;
+  font-size: 16px;
+  transition: all 300ms;
+}
+
+.items input[type="text"]:focus,
+.items input[type="password"]:focus,
+.items input[type="email"]:focus {
+  border-bottom: 1px solid #22a7f2;
+}
+
+.check-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.check-form input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+  color: #22a7f2;
+  margin-right: 10px;
+}
+
+.check-form p a {
+  color: #22a7f2;
+  font-weight: bold;
+}
+
+/* Btn - Registro */
+.formulario-registro input[type="submit"] {
+  border-style: none;
+  padding: 15px 60px;
+  border-radius: 30px;
+  background-color: #22a7f2;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.formulario-registro input[type="submit"]:hover {
+  background-color: #2f1a52;
+  transition: all 300ms;
+}
+
+/* ------------ OPCIONES DE REGISTRO -----------*/
+.opciones-registro ul {
+  margin-top: 200px;
+}
+
+.opciones-registro ul li {
+  font-size: 18px;
+}
+
+.opciones-registro ul li:nth-child(1) {
+  margin-bottom: 50px;
+}
+
+.opciones-registro ul li:nth-child(2) {
+  width: 30%;
+  font-size: 16px;
+  margin: auto;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 15px 40px;
+  background-color: #2f1a52;
+}
+
+.opciones-registro ul li:nth-child(3) img {
+  margin: 10px;
+}
+
+.opciones-registro ul li:nth-child(4) {
+  margin-top: 50px;
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.opciones-registro ul li:nth-child(4) a {
+  color: #22a7f2;
+}
+.opciones-registro ul li img {
+  width: 30px;
+}
+
+.pLogin {
+  display: flex;
+  text-align: center;
+}
+
+/* ---------- RESPONSIVE ----------- */
+@media screen and (max-width: 720px) {
+  .opciones-registro {
+    display: none;
+  }
+
+  .formulario-registro {
+    width: 100%;
+  }
+
+  .items input[type="text"],
+  .items input[type="password"],
+  .items input[type="email"],
+  .items select,
+  .items input[type="number"] {
+    width: 95%;
+  }
+
+  .items-form,
+  .items-form-2 {
+    justify-content: unset;
+  }
+}
