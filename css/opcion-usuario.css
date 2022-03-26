@@ -1,8 +1,10 @@
+/* Contenedor */
 .container {
   width: 100%;
   height: 100%;
 }
 
+/* Logo y Items de navegación */
 .header-tipo-usuario {
   width: 100%;
   height: 70px;
@@ -10,6 +12,7 @@
   justify-content: space-between;
 }
 
+/* Items */
 .items {
   height: 100%;
   display: grid;
@@ -21,12 +24,18 @@
   place-items: center;
 }
 
+/* Logo */
 .items ul li img {
   width: 50px;
 }
 
 .items ul li h1 {
   font-size: 24px;
+}
+
+/* Items de inicio y login */
+.items-opciones {
+  display: flex;
 }
 
 .items a {
@@ -37,10 +46,17 @@
   border-radius: 20px;
 }
 
+#item-inicio {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
 .logo {
   margin-left: 20px;
 }
 
+/* Texto de Titulo */
 .title-tipo-usuario {
   width: 100%;
   display: grid;
@@ -53,6 +69,7 @@
   font-size: 24px;
 }
 
+/* Ilustraciones para seleccion de Usuario */
 .options-tipo-usuario {
   width: 100%;
   margin: auto;
@@ -98,6 +115,7 @@
 }
 
 @media screen and (max-width: 550px) {
+  /* Items */
   .items ul li h1 {
     font-size: 20px;
   }
@@ -118,5 +136,11 @@
     width: 100%;
     margin: 0;
     margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .items a {
+    padding: 10px 10px;
   }
 }
