@@ -40,7 +40,7 @@
 
 .items a {
   padding: 10px 40px;
-  background-color: #22a7f2;
+  background-color: var(--principal-color);
   margin-right: 20px;
   color: white;
   border-radius: 20px;

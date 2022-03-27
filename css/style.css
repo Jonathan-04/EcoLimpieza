@@ -15,6 +15,11 @@ font-family: 'Quicksand', sans-serif;
   padding: 0;
 }
 
+:root {
+  --principal-color: #e75b10;
+  --background-color: #180d2a;
+}
+
 h1,
 h2 {
   font-family: "Quicksand", sans-serif;
