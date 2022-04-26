@@ -18,6 +18,12 @@ $(document).ready(function(){
         $(activeArticle).show();
         return false;
 
+
+        /* --------------------------------------- -*/
+
+        
+        
+
     });
 });
 

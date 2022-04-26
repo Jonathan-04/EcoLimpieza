@@ -53,15 +53,14 @@
 
 /*-------------------------- DATOS HOGAR ---------------------- */
 .datos-hogar-usuario ul li{
-    width: 25%;
+    width: 28%;
     margin: 20px;
     display: flex;
     place-items: center;
-background-color: aquamarine;
     
 }
 
 .datos-hogar-usuario ul li img{
-    width: 100px;
+    width: 80px;
     margin-right: 20px;
 }

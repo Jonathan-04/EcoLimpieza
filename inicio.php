@@ -100,72 +100,74 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
 
     <article class="article-menu-usuario" id="mi-cuenta">
       <section class="section-menu-usuario mi-cuenta-usuario">
-        <div class="items-cuenta-usuario">
+        <div class="items-cuenta-usuario btn-datos-usuario">
 
-          <a class="active2" href="">Datos Basicos</a>
-          <a class="desActive2" href="">Datos del Hogar</a>
+          <a class="desActive2" href="#datos-basicos">Datos Basicos</a>
+          <a class="desActive2" href="#datos-hogar">Datos del Hogar</a>
           <a class="desActive2" href="">Metodos de Pago</a>
 
         </div>
+        <div class="container-datos-usuario">
+          <div class="datos-basicos-usuario" id="datos-basicos">
+            <ul>
+              <?php
 
-        <div class="datos-basicos-usuario container-datos-usuario">
-          <ul>
-            <?php
+              if (isset($_SESSION['id'])) {
 
-            if (isset($_SESSION['id'])) {
+                $sql2 = "SELECT * FROM cliente WHERE id = '" . $_SESSION["id"] . "' ";
+                $ejecutar2 = mysqli_query($conexion, $sql2);
 
-              $sql2 = "SELECT * FROM cliente WHERE id = '" . $_SESSION["id"] . "' ";
-              $ejecutar2 = mysqli_query($conexion, $sql2);
+                $fila2 = mysqli_fetch_array($ejecutar2);
 
-              $fila2 = mysqli_fetch_array($ejecutar2);
+              ?>
+                <li>Tipo Documento: <p><?php echo $fila2["tipo_documento"]; ?></p>
+                </li>
+                <li>Número Documento: <p><?php echo $fila2["numero_documento"]; ?></p>
+                </li>
+                <li>Nombre: <p><?php echo $fila2["nombre"]; ?></p>
+                </li>
+                <li>Apellidos: <p><?php echo $fila2["apellidos"]; ?></p>
+                </li>
+                <li>Email: <p><?php echo $fila2["email"]; ?></p>
+                </li>
+                <li>Celular: <p><?php echo $fila2["numero_celular"]; ?></p>
+                </li>
+                <li>Dirección: <p><?php echo $fila2["direccion"]; ?></p>
+                </li>
+            </ul>
+            <a href="#">Editar</a>
+          <?php
+              } ?>
+          </div>
 
-            ?>
-              <li>Tipo Documento: <p><?php echo $fila2["tipo_documento"]; ?></p>
+          <div class="datos-hogar-usuario" id="datos-hogar">
+            <ul>
+              <li>
+                <img src="img/iconos/hogar.png" alt="">
+                <p>Mt2: 40m</p>
               </li>
-              <li>Número Documento: <p><?php echo $fila2["numero_documento"]; ?></p>
+              <li>
+                <img src="img/iconos/habitacion.png" alt="">
+                <p>N° Habitaciones: 3</p>
               </li>
-              <li>Nombre: <p><?php echo $fila2["nombre"]; ?></p>
+              <li>
+                <img src="img/iconos/baño.png" alt="">
+                <p>N° Baños: 1</p>
               </li>
-              <li>Apellidos: <p><?php echo $fila2["apellidos"]; ?></p>
+              <li>
+                <img src="img/iconos/personas.png" alt="">
+                <p>N° Personas: 4</p>
               </li>
-              <li>Email: <p><?php echo $fila2["email"]; ?></p>
+              <li>
+                <img src="img/iconos/mascotas.png" alt="">
+                <p>Mascotas: Si</p>
               </li>
-              <li>Celular: <p><?php echo $fila2["numero_celular"]; ?></p>
-              </li>
-              <li>Dirección: <p><?php echo $fila2["direccion"]; ?></p>
-              </li>
-          </ul>
-          <a href="#">Editar</a>
-        <?php
-            } ?>
+            </ul>
+            <a href="#">Editar</a>
+
+          </div>
         </div>
 
-        <div class="datos-hogar-usuario container-datos-usuario">
-          <ul>
-            <li>
-              <img src="img/iconos/hogar.png" alt="">
-              <p>Mt2: 40m</p>
-            </li>
-            <li>
-              <img src="img/iconos/habitacion.png" alt="">
-              <p>N° Habitaciones: 3</p>
-            </li>
-            <li>
-              <img src="img/iconos/baño.png" alt="">
-              <p>N° Baños: 1</p>
-            </li>
-            <li>
-              <img src="img/iconos/personas.png" alt="">
-              <p>N° Personas: 4</p>
-            </li>
-            <li>
-              <img src="img/iconos/mascotas.png" alt="">
-              <p>Mascotas: Si</p>
-            </li>
-          </ul>
-          <a href="#">Editar</a>
-
-        </div>
       </section>
     </article>
 
@@ -177,6 +179,7 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/preloader.js"></script>
   <script src="js/opciones-menu-usuario.js"></script>
+  <script src="js/opciones-datos-usuario.js"></script>
 </body>
 
 </html>
