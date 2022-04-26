@@ -21,14 +21,20 @@ font-family: 'Quicksand', sans-serif;
 }
 
 h1,
-h2 {
+h2
+ {
   font-family: "Quicksand", sans-serif;
+  user-select: none;
 }
 
+a{
+  user-select: none;
+}
 p,
 a,
 li,
-label {
+label,
+table {
   font-family: "Raleway", sans-serif;
 }
 

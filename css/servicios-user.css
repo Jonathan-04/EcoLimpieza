@@ -1,0 +1,20 @@
+/* ---------- TABLE ------------- */
+
+table{
+    width: 100%;
+}
+
+th{
+    background-color: var(--background-color);
+    color: white;
+}
+
+tr:hover{
+    background-color: #ffede3;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }

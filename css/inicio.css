@@ -1,0 +1,110 @@
+/* Logo y Items de navegación */
+.header-inicio {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+/* Items */
+.items {
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  
+.items ul {
+    display: flex;
+    place-items: center;
+}
+  
+/* Logo */
+.items ul li img {
+    width: 50px;
+}
+  
+.items ul li h1 {
+    font-size: 24px;
+}
+
+.items a {
+    padding: 10px 40px;
+    background-color: var(--principal-color);
+    margin-right: 20px;
+    color: white;
+    border-radius: 20px;
+}
+
+
+/* --------------- NAV ------------------- */
+
+.nav-inicio{
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.title-inicio{
+    margin-left: 50px;
+}
+
+.title-inicio p{
+    user-select: none;
+    font-size: 30px;
+}
+
+.title-inicio h1{
+
+    font-size: 30px;
+}
+
+/* ----------- NAV ITEMS ------------- */
+
+.items-inicio{
+    width: 70%;
+    display: grid;
+    place-items: center;
+
+}
+
+.items-inicio ul{
+    display: flex;
+}
+
+.items-inicio ul li a{
+    width: 120px;
+    padding: 15px 20px;
+    border-radius: 40px;
+    margin: 5px;
+
+}
+
+.desActive{
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+}
+
+.active{
+
+    background-color: var(--principal-color);
+    color: white;
+    border: 1px solid transparent;
+}
+
+
+
+.article-menu-usuario{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    display: grid;
+    place-items: center;
+}
+
+.section-menu-usuario{
+    width: 95%;
+    height: 100%;
+}
+  

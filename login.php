@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+include_once 'dataBase/conexiondb.php';
+
+if (isset($_SESSION['id'])) {
+
+  header("Location: inicio.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,15 +32,15 @@
     <div class="container-form-login">
       <div class="title-login">
         <h1>Login</h1>
-      </div>     
-     <form method="POST" enctype="multipart/form-data" action="/" class="form">
-       <!-- Items del Formulario -->
-        <label for="usuario" class="label">Usuario</label>
-        <input type="text" name="" id="" class="input">
+      </div>
+      <form method="POST" enctype="multipart/form-data" action="dataBase/login-validacion.php" class="form">
+        <!-- Items del Formulario -->
+        <label for="Email" class="label">Email</label>
+        <input type="email" name="email" id="" class="input" required>
         <label for="password" class="label">Contraseña</label>
-        <input type="password" name="" id="" class="input">
+        <input type="password" name="clave" id="" class="input" required>
 
-        <input type="submit" value="Ingresar" class="btn-ingresar">
+        <input type="submit" name="Ingresar" value="Ingresar" class="btn-ingresar">
 
         <!-- Opciones del Formulario -->
         <div class="options-login">
@@ -39,7 +52,7 @@
           </ul>
         </div>
       </form>
-      
+
     </div>
 </body>
 

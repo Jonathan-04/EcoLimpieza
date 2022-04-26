@@ -1,0 +1,67 @@
+/* ----------------- ITEMS ---------------------- */
+.items-cuenta-usuario{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.items-cuenta-usuario a{
+    padding: 20px 20px;
+    border-bottom: 1px solid black;
+    
+}
+
+.desActive2{
+    color: black;
+}
+
+
+.active2{
+    background-color: var(--background-color);
+    color: white;
+}
+
+/* ---------------------- DATOS BASICOS ------------------------ */
+.mi-cuenta-usuario{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-datos-usuario{
+    width: 75%;
+}
+
+.container-datos-usuario ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.datos-basicos-usuario ul li{
+    width: 30%;
+    margin: 15px;
+}
+
+.datos-basicos-usuario ul li p{
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+
+/*-------------------------- DATOS HOGAR ---------------------- */
+.datos-hogar-usuario ul li{
+    width: 25%;
+    margin: 20px;
+    display: flex;
+    place-items: center;
+background-color: aquamarine;
+    
+}
+
+.datos-hogar-usuario ul li img{
+    width: 100px;
+    margin-right: 20px;
+}
