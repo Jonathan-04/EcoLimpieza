@@ -100,8 +100,35 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
       </section>
     </article>
 
-    <article id="solicitar">
-      <h2>sdsad</h2>
+    <article class="article-menu-usuario" id="solicitar">
+      <section class="section-menu-usuario solicitar-servicio">
+        <h1 id="title-servicio">Solicitar Servicio</h1>
+        <form method="POST" enctype="multipart/form-data" action="dataBase/solicitar-servicio.php" class="form">
+          <div class="rb-tipo-servicio">
+            <input type="radio" id="control_01" name="tipo-servicio" value="Barrer, trapear, lavado de ropa, limpieza de polvo">
+            <label class="lb-rb-tipo-servicio" for="control_01">
+              <h2>Servicio Básico</h2>
+              <p>Barrer, trapear, lavado de ropa, limpieza de polvo</p>
+            </label>
+            <input type="radio" id="control_02" name="tipo-servicio" value="Incluye los Servicios Básicos más limpieza a todo el hogar (Sala - Habitaciones - Baños )">
+            <label class="lb-rb-tipo-servicio" for="control_02">
+              <h2>Servicio Personalizado</h2>
+              <p>Incluye los Servicios Básicos más limpieza a todo el hogar (Sala - Habitaciones - Baños )</p>
+            </label>
+          </div>
+          <div class="info-complementaria-servicio">
+            <div class="items-servicio">
+              <h1>Día y Hora:</h1>
+              <input type="datetime-local" name="fecha_prestacion_servicio">
+            </div>
+            <div class="items-servicio">
+              <h1>Valor Estimado:</h1>
+              <p>$120.000</p>
+            </div>
+          </div>
+          <input type="submit" value="Solicitar" name="Solicitar">
+        </form>
+      </section>
     </article>
 
 
@@ -121,7 +148,8 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
 
               if (isset($_SESSION['id'])) {
 
-                $sql2 = "SELECT * FROM cliente WHERE id = '" . $_SESSION["id"] . "' ";
+                $sql2 = "SELECT * FROM cliente 
+                         WHERE id = '" . $_SESSION["id"] . "' ";
                 $ejecutar2 = mysqli_query($conexion, $sql2);
 
                 $filas2 = mysqli_fetch_array($ejecutar2);
@@ -150,31 +178,35 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
           <div class="datos-hogar-usuario" id="datos-hogar">
             <?php
 
-            $sql3 = "SELECT * FROM cliente_hogar INNER JOIN cliente WHERE '" . $_SESSION["id"] . "' = cliente_hogar.cliente_id ";
+            $sql3 = "SELECT * FROM cliente_hogar 
+                     INNER JOIN cliente 
+                     WHERE '" . $_SESSION["id"] . "' = cliente_hogar.cliente_id ";
+
             $ejecutar3 = mysqli_query($conexion, $sql3);
+
             $filas3 = mysqli_fetch_assoc($ejecutar3);
 
             ?>
             <ul>
               <li>
                 <img src="img/iconos/hogar.png" alt="">
-                <p>Mt2: <?php echo isset($filas3["hogar_en_mt2"]); ?></p>
+                <p>Mt2: <?php echo $filas3["hogar_en_mt2"]; ?></p>
               </li>
               <li>
                 <img src="img/iconos/habitacion.png" alt="">
-                <p>N° Habitaciones: <?php echo isset($filas3["numero_habitaciones"]); ?></p>
+                <p>N° Habitaciones: <?php echo $filas3["numero_habitaciones"]; ?></p>
               </li>
               <li>
                 <img src="img/iconos/baño.png" alt="">
-                <p>N° Baños: <?php echo isset($filas3["numero_bathing"]); ?></p>
+                <p>N° Baños: <?php echo $filas3["numero_bathing"]; ?></p>
               </li>
               <li>
                 <img src="img/iconos/personas.png" alt="">
-                <p>N° Personas: <?php echo isset($filas3["numero_personas"]); ?></p>
+                <p>N° Personas: <?php echo $filas3["numero_personas"]; ?></p>
               </li>
               <li>
                 <img src="img/iconos/mascotas.png" alt="">
-                <p>Mascotas: <?php echo isset($filas3["mascotas"]); ?></p>
+                <p>Mascotas: <?php echo $filas3["mascotas"]; ?></p>
               </li>
             </ul>
             <a href="#">Editar</a>
@@ -184,8 +216,6 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
 
       </section>
     </article>
-
-
   </div>
 
 
