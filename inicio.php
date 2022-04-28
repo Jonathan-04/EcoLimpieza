@@ -76,19 +76,26 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
           </tr>
           <?php
 
-          $i = 0;
-          while ($i < 7) {
-            echo '<tr>
-          <td>25/04/2022</td>
-          <td>Realizado</td>
-          <td>Limpieza Total al Hogar</td>
-          <td><a href="#"><i class="gg-search"></i></a></td>
-        </tr>';
-            $i++;
-          }
+          $sql1 = "SELECT * FROM solicitudes 
+                    INNER JOIN cliente 
+                    WHERE '" . $_SESSION["id"] . "' = solicitudes.cliente_id ";
+
+          $ejecutar1 = mysqli_query($conexion, $sql1);
+
+          while ($filas1 = mysqli_fetch_array($ejecutar1)) {
+
 
           ?>
 
+            <tr>
+              <td><?php echo $filas1["fecha_solicitud"]; ?></td>
+              <td><?php echo $filas1["estado"]; ?></td>
+              <td><?php echo $filas1["detalles_servicio"]; ?></td>
+              <td><a href="#"><i class="gg-search"></i></a></td>
+            </tr>
+          <?php
+          };
+          ?>
         </table>
       </section>
     </article>
@@ -117,22 +124,22 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
                 $sql2 = "SELECT * FROM cliente WHERE id = '" . $_SESSION["id"] . "' ";
                 $ejecutar2 = mysqli_query($conexion, $sql2);
 
-                $fila2 = mysqli_fetch_array($ejecutar2);
+                $filas2 = mysqli_fetch_array($ejecutar2);
 
               ?>
-                <li>Tipo Documento: <p><?php echo $fila2["tipo_documento"]; ?></p>
+                <li>Tipo Documento: <p><?php echo $filas2["tipo_documento"]; ?></p>
                 </li>
-                <li>Número Documento: <p><?php echo $fila2["numero_documento"]; ?></p>
+                <li>Número Documento: <p><?php echo $filas2["numero_documento"]; ?></p>
                 </li>
-                <li>Nombre: <p><?php echo $fila2["nombre"]; ?></p>
+                <li>Nombre: <p><?php echo $filas2["nombre"]; ?></p>
                 </li>
-                <li>Apellidos: <p><?php echo $fila2["apellidos"]; ?></p>
+                <li>Apellidos: <p><?php echo $filas2["apellidos"]; ?></p>
                 </li>
-                <li>Email: <p><?php echo $fila2["email"]; ?></p>
+                <li>Email: <p><?php echo $filas2["email"]; ?></p>
                 </li>
-                <li>Celular: <p><?php echo $fila2["numero_celular"]; ?></p>
+                <li>Celular: <p><?php echo $filas2["numero_celular"]; ?></p>
                 </li>
-                <li>Dirección: <p><?php echo $fila2["direccion"]; ?></p>
+                <li>Dirección: <p><?php echo $filas2["direccion"]; ?></p>
                 </li>
             </ul>
             <a href="#">Editar</a>
@@ -141,26 +148,33 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
           </div>
 
           <div class="datos-hogar-usuario" id="datos-hogar">
+            <?php
+
+            $sql3 = "SELECT * FROM cliente_hogar INNER JOIN cliente WHERE '" . $_SESSION["id"] . "' = cliente_hogar.cliente_id ";
+            $ejecutar3 = mysqli_query($conexion, $sql3);
+            $filas3 = mysqli_fetch_assoc($ejecutar3);
+
+            ?>
             <ul>
               <li>
                 <img src="img/iconos/hogar.png" alt="">
-                <p>Mt2: 40m</p>
+                <p>Mt2: <?php echo isset($filas3["hogar_en_mt2"]); ?></p>
               </li>
               <li>
                 <img src="img/iconos/habitacion.png" alt="">
-                <p>N° Habitaciones: 3</p>
+                <p>N° Habitaciones: <?php echo isset($filas3["numero_habitaciones"]); ?></p>
               </li>
               <li>
                 <img src="img/iconos/baño.png" alt="">
-                <p>N° Baños: 1</p>
+                <p>N° Baños: <?php echo isset($filas3["numero_bathing"]); ?></p>
               </li>
               <li>
                 <img src="img/iconos/personas.png" alt="">
-                <p>N° Personas: 4</p>
+                <p>N° Personas: <?php echo isset($filas3["numero_personas"]); ?></p>
               </li>
               <li>
                 <img src="img/iconos/mascotas.png" alt="">
-                <p>Mascotas: Si</p>
+                <p>Mascotas: <?php echo isset($filas3["mascotas"]); ?></p>
               </li>
             </ul>
             <a href="#">Editar</a>
