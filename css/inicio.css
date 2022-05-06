@@ -107,4 +107,30 @@
     width: 95%;
     height: 100%;
 }
+
+/* -------------- RESPONSIVE -------------------- */
+@media screen and (max-width:740px){
+    .nav-inicio{
+        flex-wrap: wrap;
+    }
+    
+    .title-inicio{
+        margin-bottom: 50px;
+    }
+
+    .items-inicio{
+        width: 100%;
+        place-items: center;
+    }
+}
+
+@media screen and (max-width:470px){
+    .title-inicio{
+        margin-left: 20px;
+    }
+
+    .items a{
+        padding: 10px 20px;
+    }
+}
   

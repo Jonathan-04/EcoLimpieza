@@ -2,7 +2,7 @@
 
 function getUserName()
 {
-
+    /*
     require 'conexiondb.php';
 
     $sql = "SELECT nombre, apellidos FROM cliente WHERE id = '" . $_SESSION["id"] . "' ";
@@ -16,6 +16,23 @@ function getUserName()
 
     $ejecutar->free();
     $conexion->close();
+    */
+
+    require 'conexiondbPDO.php';
+
+    $query = "SELECT nombre, apellidos 
+              FROM cliente 
+              WHERE id= '" . $_SESSION["id"] . "'  ";
+
+    $ejecutar = $conexion->prepare($query);
+
+    $ejecutar->execute();
+
+    $row = $ejecutar->fetch(PDO::FETCH_OBJ);
+    echo $row->nombre . " " . $row->apellidos;
+
+
+    $conexion = null;
 }
 
 
@@ -92,7 +109,7 @@ function getDatosHogarCuenta()
     require 'conexiondb.php';
 
     $sql3 = "SELECT * FROM cliente_hogar 
-             INNER JOIN cliente ON cliente.id = cliente_hogar.cliente_id
+             INNER JOIN cliente 
              WHERE '" . $_SESSION["id"] . "' = cliente_hogar.cliente_id ";
 
     $ejecutar3 = mysqli_query($conexion, $sql3);
