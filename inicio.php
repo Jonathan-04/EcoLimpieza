@@ -75,26 +75,7 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
             <th></th>
           </tr>
           <?php
-
-          $sql1 = "SELECT * FROM solicitudes 
-                    INNER JOIN cliente 
-                    WHERE '" . $_SESSION["id"] . "' = solicitudes.cliente_id ";
-
-          $ejecutar1 = mysqli_query($conexion, $sql1);
-
-          while ($filas1 = mysqli_fetch_array($ejecutar1)) {
-
-
-          ?>
-
-            <tr>
-              <td><?php echo $filas1["fecha_solicitud"]; ?></td>
-              <td><?php echo $filas1["estado"]; ?></td>
-              <td><?php echo $filas1["detalles_servicio"]; ?></td>
-              <td><a href="#"><i class="gg-search"></i></a></td>
-            </tr>
-          <?php
-          };
+          getSolicitudes();
           ?>
         </table>
       </section>
@@ -145,72 +126,14 @@ if (!isset($_SESSION['id']) || !$_SESSION['id']) {
           <div class="datos-basicos-usuario" id="datos-basicos">
             <ul>
               <?php
-
-              if (isset($_SESSION['id'])) {
-
-                $sql2 = "SELECT * FROM cliente 
-                         WHERE id = '" . $_SESSION["id"] . "' ";
-                $ejecutar2 = mysqli_query($conexion, $sql2);
-
-                $filas2 = mysqli_fetch_array($ejecutar2);
-
+              getDatosBasicosCuenta();
               ?>
-                <li>Tipo Documento: <p><?php echo $filas2["tipo_documento"]; ?></p>
-                </li>
-                <li>Número Documento: <p><?php echo $filas2["numero_documento"]; ?></p>
-                </li>
-                <li>Nombre: <p><?php echo $filas2["nombre"]; ?></p>
-                </li>
-                <li>Apellidos: <p><?php echo $filas2["apellidos"]; ?></p>
-                </li>
-                <li>Email: <p><?php echo $filas2["email"]; ?></p>
-                </li>
-                <li>Celular: <p><?php echo $filas2["numero_celular"]; ?></p>
-                </li>
-                <li>Dirección: <p><?php echo $filas2["direccion"]; ?></p>
-                </li>
-            </ul>
-            <a href="#">Editar</a>
-          <?php
-              } ?>
           </div>
 
           <div class="datos-hogar-usuario" id="datos-hogar">
             <?php
-
-            $sql3 = "SELECT * FROM cliente_hogar 
-                     INNER JOIN cliente 
-                     WHERE '" . $_SESSION["id"] . "' = cliente_hogar.cliente_id ";
-
-            $ejecutar3 = mysqli_query($conexion, $sql3);
-
-            $filas3 = mysqli_fetch_assoc($ejecutar3);
-
+            getDatosHogarCuenta();
             ?>
-            <ul>
-              <li>
-                <img src="img/iconos/hogar.png" alt="">
-                <p>Mt2: <?php echo $filas3["hogar_en_mt2"]; ?></p>
-              </li>
-              <li>
-                <img src="img/iconos/habitacion.png" alt="">
-                <p>N° Habitaciones: <?php echo $filas3["numero_habitaciones"]; ?></p>
-              </li>
-              <li>
-                <img src="img/iconos/baño.png" alt="">
-                <p>N° Baños: <?php echo $filas3["numero_bathing"]; ?></p>
-              </li>
-              <li>
-                <img src="img/iconos/personas.png" alt="">
-                <p>N° Personas: <?php echo $filas3["numero_personas"]; ?></p>
-              </li>
-              <li>
-                <img src="img/iconos/mascotas.png" alt="">
-                <p>Mascotas: <?php echo $filas3["mascotas"]; ?></p>
-              </li>
-            </ul>
-            <a href="#">Editar</a>
-
           </div>
         </div>
 
