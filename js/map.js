@@ -1,5 +1,9 @@
-let map = L.map('map').setView([3.375518, -76.548184], 20);
+//Script para utilizar el Mapa Opensource de Leaflet | https://leafletjs.com
 
+//Ubicación de Bogotá
+let map = L.map('map').setView([4.610, -74.082], 12);
+
+//URL del mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
@@ -10,8 +14,8 @@ function onMapClick(e) {
     popup
         .setLatLng(e.latlng) // Sets the geographical point where the popup will open.
         //.setContent("Has hecho click en la coordenada:<br> " +  e.latlng.lat.toString() + "," +  e.latlng.lng.toString()) // Sets the HTML content of the popup.
-        .setContent("Ubicación Seleccionada")
-        .openOn(map); // Adds the popup to the map and closes the previous one. 
+        //.setContent("Ubicación Seleccionada")
+        //.openOn(map); // Adds the popup to the map and closes the previous one. 
 
     let lat = e.latlng.lat.toString();
     let lng = e.latlng.lng.toString();

@@ -10,7 +10,7 @@
     padding: 20px 20px;
     border-bottom: 1px solid black;
     
-}
+} 
 
 .desActive2{
     color: black;
@@ -189,7 +189,13 @@
 }
 
 #else-while{
+    width: 50%;
+    text-align: center;
+    margin-top: 100px;
     margin-bottom: 50px;
+    font-size: 18px;
+    position: absolute;
+    color: rgb(140, 140, 140);
 }
 
 
@@ -204,6 +210,24 @@
     .items-servicio{
         width: 100%;
         margin-bottom: 50px;
+    }
+
+    .rb-tipo-servicio input[type="radio"]:hover + label{
+        box-shadow: none;
+    }
+
+    .mi-cuenta-usuario{
+        flex-wrap: wrap;
+    }
+
+    .items-cuenta-usuario{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .container-datos-usuario{
+        width: 100%;
     }
 }
 

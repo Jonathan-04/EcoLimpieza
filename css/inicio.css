@@ -43,6 +43,9 @@
     height: 100%;
     margin-top: 50px;
     display: flex;
+    padding-bottom: 30px;
+    -webkit-box-shadow: 0px 17px 15px -5px rgba(0,0,0,0.14); 
+    box-shadow: 0px 17px 15px -5px rgba(135, 135, 135, 0.14);
 }
 
 .title-inicio{
@@ -106,6 +109,15 @@
 .section-menu-usuario{
     width: 95%;
     height: 100%;
+}
+
+.title-sin-servicios{
+    width: 95%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 30px;
+    position: absolute;
+    color: rgb(191, 191, 191);
 }
 
 /* -------------- RESPONSIVE -------------------- */

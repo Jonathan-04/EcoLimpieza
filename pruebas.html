@@ -1,0 +1,88 @@
+<!-- Esto es solo para probar nuevas cosas en cuanto al diseño,
+puede ser cambiado cuando se quiera crear nuevas vistas -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pruebas</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pruebas.css" />
+</head>
+
+<body>
+  <div class="items-solicitudes" id="items-solicitudes">
+    <ul>
+      <li id="estatusOn"></li>
+      <li>
+        <p class="titulo-solicitud">Publicado</p>
+        <p>22/22/2022</p>
+      </li>
+      <li id="detalles-solicitud">
+        <p class="titulo-solicitud">Detalles</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li>
+        <p class="titulo-solicitud">Valor</p>
+        <p>$120.000</p>
+      </li>
+      <li class="data-empleado">
+        <p class="titulo-solicitud">Realizado por</p>
+        <p>Maid Pruebaa</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="modal-solicitud" id="modalSolicitud">
+    <div class="content-solicitud">
+      <ul class="seccion-solicitud">
+        <li>
+          <h2>Detalles del Servicio</h2>
+        </li>
+        <li>
+          <p>Publicado</p>
+          <p>22/22/2022</p>
+        </li>
+        <li>
+          <p>Detalles</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </li>
+        <li>
+          <p>Valor</p>
+          <p>$120.000</p>
+        </li>
+        <li>
+          <a href="">Generar Factura</a>
+        </li>
+        <li>
+          <a href="">Cancelar el Servicio</a>
+        </li>
+      </ul>
+      <ul class="seccion-empleado">
+        <li>
+          <h2>Realizado Por:</h2>
+        </li>
+        <li>
+          <p>Maid Prueba</p>
+        </li>
+        <li>
+          <p>123331323</p>
+        </li>
+        <li><img src="img/Belfast.jpg" alt="" /></li>
+        <li>
+          <p>Reportar</p>
+        </li>
+      </ul>
+      <button id="CerrarModal">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/modal-solicitudes.js"></script>
+</body>
+
+</html>

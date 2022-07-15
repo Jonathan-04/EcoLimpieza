@@ -1,3 +1,7 @@
+<!-- Este formulario NO está en funcionamiento
+el registro debería ser realizado por el Administrador 
+con la información traida de las Hojas de Vida que envían los posibles empleados -->
+
 <!DOCTYPE html>
 <html lang="es">
 

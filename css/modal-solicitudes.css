@@ -1,0 +1,66 @@
+/* --------------- Modal Solicitud -------------- */
+
+.detalles-solicitud{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+}
+
+.seccion-solicitud{
+    width: 50%;
+    text-align: center;
+}
+
+.seccion-solicitud li{
+    margin-bottom: 50px;
+}
+
+#btn-volver{
+    position: absolute;
+    left: 40px;
+}
+
+.seccion-empleado img{
+    width: 150px;
+}
+
+#download-pdf{
+    padding: 10px;
+    border: 1px solid var(--principal-color);
+    transition: all 300ms;
+}
+
+#download-pdf img{
+    position: relative;
+    top: 5px;
+}
+
+#download-pdf:hover{
+    -webkit-box-shadow: 3px 3px 0px 0px var(--principal-color); 
+    box-shadow: 3px 3px 0px 0px var(--principal-color);
+    transition: all 300ms;
+}
+
+#cancelar-servicio{
+    padding: 10px;
+    border: 1px solid red;
+    transition: all 300ms;
+}
+
+#cancelar-servicio:hover{
+    background-color: red;
+    color: white;
+    transition: all 300ms;
+}
+
+@media screen and (max-width: 500px){
+
+    .detalles-solicitud{
+        flex-direction: column;
+    }
+
+    .seccion-solicitud{
+        width: 100%;
+    }
+
+}

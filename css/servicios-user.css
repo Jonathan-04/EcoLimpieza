@@ -1,20 +1,82 @@
-/* ---------- TABLE ------------- */
-
-table{
+.container-solicitudes{
+    position: relative;
     width: 100%;
+    height: 100%;
+    background-color: #EFEFEF;
+    
 }
 
-th{
-    background-color: var(--background-color);
-    color: white;
+.items-solicitudes{
+    position: relative;
+    width: 90%;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid #dedede;
+    transition: all 300ms;
 }
 
-tr:hover{
-    background-color: #ffede3;
+.items-solicitudes:hover{
+    box-shadow: 11px 11px 0px 2px var(--background-color);
 }
 
-th, td {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
+.items-solicitudes ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.items-solicitudes ul li{
+    width: 20%;
+    padding: 20px 0px;
+}
+
+.items-solicitudes ul li p{
+    margin-bottom: 20px;
+}
+
+.titulo-solicitud{
+    font-weight: bold;
+}
+
+#estatusOn, #estatusOff, #estatusOther{
+    width: 15px;
+    margin-left: -10px;
+    margin-right: 10px;
+}
+
+#estatusOn{
+    background: #A8FF7E;
+}
+
+#estatusOff{
+ 
+    background: #ff7e7e;
+}
+
+#estatusOther{
+
+    background: #7ebcff;
+}
+
+#detalles-solicitud{
+    width: 25%;
+}
+
+
+@media screen and (max-width: 725px){
+    #detalles-solicitud{
+        display: none;
+    }
+
+    .items-solicitudes ul li{
+        width: 40%;
+    }
+
+    .items-solicitudes:hover{
+        box-shadow: none;
+    }
+}

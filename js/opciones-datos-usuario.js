@@ -18,11 +18,6 @@ $(document).ready(function(){
         $(activeArticle2).show();
         return false;
 
-
-
-        
-        
-
     });
 });
 
