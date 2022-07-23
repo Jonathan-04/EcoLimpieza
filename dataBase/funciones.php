@@ -155,7 +155,7 @@ function getDetallesSolicitudes()
                         <h2>Detalles del Servicio</h2>
                     </li>
                     <li>
-                        <p>Publicado</p>
+                        <p><?php echo $filas->estado; ?></p>
                         <p><?php echo $filas->fecha_solicitud; ?></p>
                     </li>
                     <li>
@@ -170,7 +170,7 @@ function getDetallesSolicitudes()
                         <a href="" id="download-pdf">Generar Factura <img src="img/iconos/icon-download.svg" alt=""></a>
                     </li>
                     <li>
-                        <a href="dataBase/cancelar-solicitud.php" id="cancelar-servicio">Cancelar el Servicio</a>
+                        <a href="dataBase/cancelar-solicitud.php?idSolicitud=<?php echo $_GET['idSolicitud']; ?>" id="cancelar-servicio">Cancelar el Servicio</a>
                     </li>
                 </ul>
 

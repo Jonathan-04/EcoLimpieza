@@ -5,7 +5,7 @@
 session_start();
 
 //Conexión Mysqli
-include_once 'conexiondb.php';
+require 'conexiondb.php';
 
 
 if ($_POST['Ingresar']) {
@@ -38,7 +38,7 @@ if ($_POST['Ingresar']) {
 
             header("Location: ../inicio.php");
         } else {
-            header("Location: ../login.php?errorLogin=1");
+            header("Location: ../login.php?tipo=" . $_GET['tipo'] . " &errorLogin=1");
         }
 
         //Liberar la consulta y cerrar la conexión
@@ -71,7 +71,7 @@ if ($_POST['Ingresar']) {
 
             header("Location: ../mapa.php");
         } else {
-            header("Location: ../login.php?errorLogin=1");
+            header("Location: ../login.php?tipo=" . $_GET['tipo'] . " &errorLogin=1");
         }
 
         //Liberar la consulta y cerrar la conexión

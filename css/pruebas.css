@@ -1,146 +1,28 @@
-.container-solicitudes{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #EFEFEF;
-    
-}
-
-.items-solicitudes{
-    position: relative;
-    width: 90%;
-    height: 120px;
-    margin: auto;
-    margin-bottom: 30px;
-    background-color: white;
-    cursor: pointer;
-    border: 1px solid #dedede;
-    transition: all 300ms;
-}
-
-.items-solicitudes:hover{
-    box-shadow: 11px 11px 0px 2px var(--background-color);
-}
-
-.items-solicitudes ul{
+.container{
     width: 100%;
     height: 100%;
     display: flex;
-
+    flex-direction: column;
+    text-align: center;
+    place-content: center;
+    background-image: url(../img/iconos/iconEco2.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.items-solicitudes ul li{
-    width: 20%;
-    padding: 20px 0px;
+.informacion{
+    margin: 40px;
 }
 
-.items-solicitudes ul li p{
-    margin-bottom: 20px;
+.informacion h1{
+    font-size: 22px;
 }
 
-.items-solicitudes ul li img{
-    width: 120px;
-    height: 100%;
-    object-fit: cover;
+.detalles-solicitud li{
+    margin: 20px;
 }
-
-.titulo-solicitud{
+#titulo-servicios{
     font-weight: bold;
 }
 
-#estatusOn, #estatusOff, #estatusOther{
-    width: 15px;
-    margin-left: -10px;
-    margin-right: 10px;
-}
-
-#estatusOn{
-    background: #A8FF7E;
-}
-
-#estatusOff{
- 
-    background: #ff7e7e;
-}
-
-#estatusOther{
-
-    background: #7ebcff;
-}
-
-#detalles-solicitud{
-    width: 25%;
-}
-
-
-@media screen and (max-width: 725px){
-    #detalles-solicitud{
-        display: none;
-    }
-
-    .items-solicitudes ul li{
-        width: 40%;
-    }
-
-    .items-solicitudes:hover{
-        box-shadow: none;
-    }
-}
-
-
-/* --------------- Modal Solicitud -------------- */
-
-.modal-solicitud{
-    display: block;
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(2px);
-    border-radius: 4px;
-    z-index: 1000;
-    text-align: center;
-    transition: all 300ms;
-}
-.content-solicitud{
-    position: absolute;
-    width: 60vw;
-    height: 80vh;
-    background-color: white;
-    margin: auto;
-    inset: 0;
-    display: flex;
-
-}
-/* Información del Modal */
-
-.content-solicitud ul{
-    width: 50%;
-    margin-top: 20px;
-}
-
-.content-solicitud ul li{
-    margin: 5px;
-    margin-bottom: 30px;
-}
-
-.seccion-empleado li img{
-    width: 140px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.content-solicitud button{
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 30%;
-    padding: 10px 10px;
-    border-style: none;
-    background-color: var(--background-color);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
